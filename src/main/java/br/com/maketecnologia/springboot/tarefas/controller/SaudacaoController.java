@@ -19,7 +19,8 @@ public class SaudacaoController {
     }
 
     @GetMapping("/com-request-param")
-    public String olaComRequestParam(@RequestParam String nome) {
+    public String olaComRequestParam(
+            @RequestParam(required = false, defaultValue = "sem nome") String nome) {
         return "Olá, " + maiusculoService.converter(nome);
     }
 }
